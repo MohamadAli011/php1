@@ -1,0 +1,13 @@
+1.  Tipe data
+	> String, Integer, float, Boolean, Array, Object, NUll Value
+2.  Operator
+	>Arithmetic operators,Assignment operators,Comparison operators,Increment/Decrement operators,Logical operators,String operators,Array operators,Conditional assignment operators
+3.  pemilihan (if switch)
+4.  pengulangan 
+5.  array
+6.  function
+7.  HTML,CSS,JS, FORM
+8.  cookies dan session
+9.  operasi file
+10. Databse
+11. pbo

@@ -6,8 +6,9 @@
 4.  pengulangan 
 5.  array
 6.  function
-7.  HTML,CSS,JS, FORM
-8.  cookies dan session
-9.  operasi file
-10. Databse
-11. pbo
+7.  cookies dan session
+8.  Databse
+9.	Form
+10. operasi file
+11. HTML,CSS,JS, FORM
+12. pbo

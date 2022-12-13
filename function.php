@@ -10,6 +10,10 @@ function jum(int $a, int $b){
 	echo "Jumlah $tot";
 }
 
+/// Function Argument
+/// Function Return Value
+/// Variable Function
+
 //sayHello("andi");
 //helo("liok");
 //jum(2,4);

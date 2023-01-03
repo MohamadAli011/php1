@@ -45,11 +45,52 @@ if ($conn->query($inssql) === TRUE) {
   echo "New record created successfully";
 } else {
   echo "Error: " . $inssql . "<br>" . $conn->error;
-}*/
+}
 
 $lastid = $conn->insert_id;
 echo $lastid;
+////Insert Data
+$sql = "INSERT INTO MyGuests (firstname, lastname, email)
+VALUES ('Alex', 'kol', 'Alkol@example.com')";
 
+if ($conn->query($sql) === TRUE) {
+  echo "New record created successfully";
+} else {
+  echo "Error: " . $sql . "<br>" . $conn->error;
+}
+////Delete
+$sql = "DELETE FROM MyGuests WHERE firstname='John'";
+
+////Select Data
+$sql = "SELECT id, firstname, lastname FROM MyGuests";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+    echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+  }
+} else {
+  echo "0 results";
+}
+*/
+$sql = "SELECT id, firstname, lastname FROM MyGuests";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+    echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+  }
+} else {
+  echo "0 results";
+}
+
+if ($conn->query($sql) === TRUE) {
+  echo "Delete successfully";
+} else {
+  echo "Delete Error: " . $sql . "<br>" . $conn->error;
+}
 
 $conn->close();
 

@@ -15,13 +15,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if (empty($_POST['name'])) {
 		$nameErr = "Nama is required";
 	} else {
-		
+		$name = test_input($_POST["name"]);
 	}
-  $name = test_input($_POST["name"]);
-  $email = test_input($_POST["email"]);
-  $website = test_input($_POST["website"]);
-  $comment = test_input($_POST["comment"]);
-  $gender = test_input($_POST["gender"]);
+	if (empty($_POST["email"])) {
+    $emailErr = "Email is required";
+  } else {
+    $email = test_input($_POST["email"]);
+  }
+    
+  if (empty($_POST["website"])) {
+    $website = "";
+  } else {
+    $website = test_input($_POST["website"]);
+  }
+
+  if (empty($_POST["comment"])) {
+    $comment = "";
+  } else {
+    $comment = test_input($_POST["comment"]);
+  }
+
+  if (empty($_POST["gender"])) {
+    $genderErr = "Gender is required";
+  } else {
+    $gender = test_input($_POST["gender"]);
+  }
 }
 
 function test_input($data) {
@@ -31,9 +49,14 @@ function test_input($data) {
   return $data;
 }
 ?>
-	<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-		Name   : <input type="text" name="name"><br>
-		E-mail : <input type="text" name="email"><br>
+	<form method="post" action="<?php echo 
+	htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+		Name   : <input type="text" name="name">
+		<span class="error">* <?php echo $nameErr;?></span>
+  	<br>
+		E-mail : <input type="text" name="email">
+		<span class="error">* <?php echo $emailErr; ?></span>
+		<br>
 		Website: <input type="text" name="website"><br>
 		Comment: <textarea name="comment" rows="5" cols="40"></textarea><br>
 		Gender: 
